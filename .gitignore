@@ -1,0 +1,14 @@
+# Build output
+build/
+
+# Editors
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local runtime / config
+*.log

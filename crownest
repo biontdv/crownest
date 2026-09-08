@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Crownest launcher
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+JAR="$HERE/build/crownest.jar"
+
+if [[ ! -f "$JAR" ]]; then
+  echo "[*] Jar not found, building first..."
+  "$HERE/build.sh"
+fi
+
+exec java -jar "$JAR" "$@"
