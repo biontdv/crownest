@@ -14,7 +14,8 @@ A hardened HTTP file server with a desktop GUI, built for pentesters and CTF pla
 ![Swing](https://img.shields.io/badge/UI-Swing-1e88e5?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows-333?style=for-the-badge&logo=linux&logoColor=white)
 ![Dependencies](https://img.shields.io/badge/Dependencies-Zero-2ea44f?style=for-the-badge)
-![License](https://img.shields.io/badge/Use-Authorized%20only-red?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![Use](https://img.shields.io/badge/Use-Authorized%20only-red?style=for-the-badge)
 
 </div>
 
@@ -193,6 +194,12 @@ security research, CTF competitions, and education.
 or have **explicit written permission** to test. The author, **Muhamad Bion Tadavi**, is
 **not responsible for any illegal activity, misuse, or damage** caused by this tool. If you
 are not authorized to test a target, do not use it.
+
+---
+
+## 📄 License
+
+Released under the [MIT License](LICENSE). © 2026 Muhamad Bion Tadavi.
 
 ---
 
