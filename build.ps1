@@ -25,6 +25,12 @@ $sources = Get-ChildItem -Recurse -Filter *.java -Path (Join-Path $Here 'src') |
 
 Write-Host '[*] Bundling resources'
 Copy-Item (Join-Path $Here 'resources\crownest.png') $Out
+$Templates = Join-Path $Here 'resources\templates'
+if (Test-Path $Templates) {
+    $OutTemplates = Join-Path $Out 'templates'
+    New-Item -ItemType Directory -Force -Path $OutTemplates | Out-Null
+    Copy-Item (Join-Path $Templates '*.ps1') $OutTemplates
+}
 
 Write-Host "[*] Packaging $Jar"
 & jar --create --file $Jar --main-class com.crownest.Main -C $Out .

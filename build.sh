@@ -19,6 +19,10 @@ javac -encoding UTF-8 -d "$OUT" @build/sources.txt
 
 echo "[*] Bundling resources"
 cp resources/crownest.png "$OUT"/
+if [ -d resources/templates ]; then
+  mkdir -p "$OUT/templates"
+  cp resources/templates/*.ps1 "$OUT/templates"/
+fi
 
 echo "[*] Packaging $JAR"
 jar --create --file "$JAR" --main-class com.crownest.Main -C "$OUT" .

