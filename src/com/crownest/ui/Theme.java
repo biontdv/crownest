@@ -27,7 +27,8 @@ public final class Theme {
         DARK("Dark"),
         LIGHT("Light"),
         OFFSEC("OffSec"),
-        HTB("Hack The Box");
+        HTB("Hack The Box"),
+        KIRO("Kiro");
 
         private final String label;
 
@@ -172,6 +173,27 @@ public final class Theme {
                 BLUE = rgb(0x5cb2ff);
                 ORANGE = rgb(0xffaf00);
             }
+            case KIRO -> {
+                // Kiro IDE: deep purple-gray chrome with a vivid violet accent.
+                BG = rgb(0x19161d);
+                PANEL = rgb(0x211d25);
+                PANEL_ALT = rgb(0x28242e);
+                INPUT = rgb(0x141117);
+                BORDER = rgb(0x312b3a);
+                BORDER_LIGHT = rgb(0x3e3649);
+                TEXT = rgb(0xe8e3f0);
+                TEXT_MUTED = rgb(0xa89cc0);
+                TEXT_FAINT = rgb(0x6b6080);
+                ACCENT = rgb(0xb080ff);
+                ACCENT_HOVER = rgb(0xc49dff);
+                ACCENT_PRESSED = rgb(0x9060e0);
+                ACCENT_TEXT = rgb(0xffffff);
+                SELECTION = rgb(0x3a2a55);
+                GREEN = rgb(0x80ffb0);
+                RED = rgb(0xff6b7a);
+                BLUE = rgb(0x80c8ff);
+                ORANGE = rgb(0xffb860);
+            }
         }
     }
 
@@ -190,7 +212,8 @@ public final class Theme {
         UIManager.put("control", PANEL);
         UIManager.put("info", PANEL_ALT);
         UIManager.put("nimbusBase", kind == Kind.LIGHT ? rgb(0xc9ced7) : PANEL_ALT);
-        UIManager.put("nimbusBlueGrey", kind == Kind.LIGHT ? rgb(0xdadfe6) : BORDER);
+        UIManager.put("nimbusBlueGrey", kind == Kind.LIGHT ? rgb(0xdadfe6)
+                : kind == Kind.KIRO ? rgb(0x2e2838) : BORDER);
         UIManager.put("nimbusLightBackground", INPUT);
         UIManager.put("nimbusSelectionBackground", SELECTION);
         UIManager.put("nimbusSelection", SELECTION);
